@@ -9,8 +9,8 @@ library(dashBootstrapComponents)
 app <- Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 
 # dataset
-gapminder <- readr::read_csv(here::here('gapminder.csv')) |> 
-  mutate(log_income = log(income)) |> 
+gapminder <- readr::read_csv(here::here('data', 'gapminder.csv')) %>% 
+  mutate(log_income = log(income)) %>% 
   tidyr::drop_na()
 
 app$layout(
@@ -44,10 +44,10 @@ app$callback(
   output("bubblechart", "figure"),
   list(input("yr", "value")),
   function(yr) {
-    data <- gapminder |> 
+    data <- gapminder %>% 
       dplyr::filter(year == yr)
     
-    p <- data |> 
+    p <- data %>% 
       ggplot(
         aes(
           x = log_income,
@@ -70,4 +70,6 @@ app$callback(
   }
 )
 
-app$run_server(debug = T)
+app$run_server(host = '0.0.0.0')
+
+# app$run_server(debug = T)
