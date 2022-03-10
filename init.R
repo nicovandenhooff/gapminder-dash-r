@@ -17,7 +17,7 @@ install.packages(
         'ggthemes',
         'remotes',
         'dashCoreComponents',
-        'dashHtmlComponents',
+        'dashHtmlComponents'
     )
 )
 
