@@ -18,7 +18,6 @@ install.packages(
         'remotes',
         'dashCoreComponents',
         'dashHtmlComponents',
-        'dashBootstrapComponents'
     )
 )
 
