@@ -12,6 +12,8 @@ options(repos=r)
 install.packages(
     c(
         'dash',
+        'plotly',
+        'ggplot2',
         'readr',
         'here',
         'ggthemes',
